@@ -303,7 +303,18 @@ else:
 # realizar a operação escolhida e mostrar o resultado. Não permita divisão
 # por zero.
 
+n1 = float(input("Digite o 1° número:"))
+n2 = float (input("Digite o 2° número:"))
+operacao = str(input("Digite a operação (+, -, * ou /):"))
 
+if operacao == "+":
+    print(f"O resultado da soma é: {(n1+n2):.2f}")
+elif operacao == "-":
+    print(f"O resultado da subtração é: {(n1-n2):.2f}")
+elif operacao == "*":
+    print(f"O resultado da multiplicação é: {(n1*n2):.2f}")
+elif operacao == "/":
+    print(f"O resultado da divisão é: {(n1/n2)}")
 
 
 # ============================================================================
@@ -333,7 +344,12 @@ cores[-1]
 # Crie uma lista com três nomes. Peça outro nome ao usuário, adicione-o ao
 # final da lista com append() e mostre a lista atualizada.
 
+nomes = ["Luiza", "Pedro", "Mateus"]
+nome4 = str(input("Digite um nome:"))
 
+nomes.append(nome4)
+
+print(nomes)
 
 # _________________________________________________________
 
@@ -341,7 +357,11 @@ cores[-1]
 # Dada a lista abaixo, remova "banana" com remove() e mostre o resultado.
 # frutas = ["maçã", "banana", "laranja", "uva"]
 
+frutas = ["maçã", "banana", "laranja", "uva"]
 
+frutas.remove("banana")
+
+print(frutas)
 
 # _________________________________________________________
 
@@ -349,7 +369,11 @@ cores[-1]
 # Dada a lista abaixo, substitua "laranja" por "abacaxi" usando seu índice.
 # frutas = ["maçã", "banana", "laranja", "uva"]
 
+frutas = ["maçã", "banana", "laranja", "uva"]
 
+frutas[2] = "abacaxi"
+
+print(frutas)
 
 # _________________________________________________________
 
@@ -358,7 +382,14 @@ cores[-1]
 # o número 30 pertence à lista.
 # numeros = [10, 20, 30, 40, 50]
 
+numeros = [10, 20, 30, 40, 50]
 
+len(numeros)
+
+if 30 in numeros:
+    print("O número 30 pertence à lista.")
+else:
+    print("O número 30 não pertence à lista")
 
 # _________________________________________________________
 
@@ -367,7 +398,11 @@ cores[-1]
 # sum(), max() e min().
 # valores = [12, 5, 28, 9, 17]
 
+valores = [12, 5, 28, 9, 17]
 
+print(f"A soma dos números da lista é: {sum(valores)}.")
+print(f"O maior valor da lista é: {max(valores)}.")
+print(f"O menor valor da lista é: {min(valores)}.")
 
 # _________________________________________________________
 
@@ -375,7 +410,11 @@ cores[-1]
 # Coloque a lista abaixo em ordem alfabética usando sort() e mostre o resultado.
 # cidades = ["Curitiba", "Salvador", "Recife", "Goiânia", "Manaus"]
 
+cidades = ["Curitiba", "Salvador", "Recife", "Goiânia", "Manaus"]
 
+cidades.sort()
+
+print(cidades)
 
 # _________________________________________________________
 
@@ -384,7 +423,12 @@ cores[-1]
 # lista_a = [1, 2, 3]
 # lista_b = [4, 5, 6]
 
+lista_a = [1, 2, 3]
+lista_b = [4, 5, 6]
 
+lista_c = lista_a + lista_b
+
+print(lista_c)
 
 # _________________________________________________________
 
@@ -395,6 +439,13 @@ cores[-1]
 # c) os números do índice 2 ao índice 5.
 # numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+print(f"Os 3 primeiros números são: {(numeros[0], numeros[1], numeros[2])}.")
+
+print(f"Os 3 últimos números são: {(numeros[-3], numeros[-2], numeros[-1])}.")
+
+print(f"Os números do índice 2 ao 5 são: {(numeros[1], numeros[2], numeros[3], numeros[4])}.")
 
 # ============================================================================
 # 4. ESTRUTURAS DE REPETIÇÃO — EXERCÍCIOS 31 A 40
@@ -406,13 +457,14 @@ cores[-1]
 for n in range(1, 11):
     print(n)
 
-
 # _________________________________________________________
 
 # Exercício 32 — Números pares
 # Use um laço for para mostrar apenas os números pares de 2 a 20.
 
-
+for n in range(2,21):
+    if n % 2 == 0:
+        print(n)
 
 # _________________________________________________________
 
@@ -420,7 +472,10 @@ for n in range(1, 11):
 # Use um laço for para mostrar cada nome da lista abaixo em uma linha.
 # nomes = ["Ana", "Bruno", "Carla", "Diego"]
 
+nomes = ["Ana", "Bruno", "Carla", "Diego"]
 
+for nome in nomes:
+    print(nome)
 
 # _________________________________________________________
 
@@ -428,7 +483,13 @@ for n in range(1, 11):
 # Use um laço for para criar uma nova lista contendo o quadrado de cada número.
 # numeros = [1, 2, 3, 4, 5]
 
+numeros = [1, 2, 3, 4, 5]
+quadrados = []
 
+for numero in numeros:
+    quadrados.append(numero*numero)
+
+print(quadrados)
 
 # _________________________________________________________
 
@@ -437,6 +498,13 @@ for n in range(1, 11):
 # Não use a função sum().
 # valores = [10, 20, 30, 40, 50]
 
+valores = [10, 20, 30, 40, 50]
+soma = 0
+
+for valor in valores:
+    soma =  soma + valor
+
+print(soma)
 
 # _________________________________________________________
 
@@ -444,13 +512,25 @@ for n in range(1, 11):
 # Percorra a lista e conte quantas notas são maiores ou iguais a 7.
 # notas = [8.0, 5.5, 7.0, 9.2, 4.0, 6.8]
 
+notas = [8.0, 5.5, 7.0, 9.2, 4.0, 6.8]
+notas1 = []
+
+for nota in notas:
+    if nota >= 7:
+        notas1.append(nota)
+
+print(f"O número de notas maiores ou iguais a 7 é: {len(notas1)}.")
 
 # _________________________________________________________
 
 # Exercício 37 — Contagem com while
 # Use um laço while para mostrar os números de 1 a 10.
 
+numero = 1
 
+while numero <= 10:
+    print(numero)
+    numero = numero + 1
 
 # _________________________________________________________
 
@@ -458,7 +538,13 @@ for n in range(1, 11):
 # Use um laço while para fazer uma contagem regressiva de 10 até 1.
 # Ao terminar, mostre a mensagem "Fim!".
 
+numero = 10
 
+while numero >= 1:
+    print(numero)
+    numero = numero - 1
+
+print("Fim!")
 
 # _________________________________________________________
 
@@ -466,13 +552,28 @@ for n in range(1, 11):
 # Peça uma senha ao usuário repetidamente usando while. O programa deve parar
 # somente quando a senha digitada for "python123".
 
+senha = str(input("Digite a senha:"))
 
+while senha != "python123":
+    print("Senha incorreta.")
+    senha = str(input("Tente novamente:")) 
+
+print("Senha correta!")
 
 # _________________________________________________________
 
 # Exercício 40 — Somando até zero
 # Peça números inteiros ao usuário e some os valores digitados. Use while para
 # continuar a leitura até que o usuário digite 0. Ao final, mostre a soma.
+
+soma = 0
+numero = int(input("Digite um número inteiro: "))
+
+while numero != 0:
+    soma = soma + numero
+    numero = int(input("Digite um número inteiro: "))
+
+print(f"A soma dos números digitados é: {soma}")
 
 
 # ============================================================================
@@ -482,11 +583,14 @@ for n in range(1, 11):
 # Exercício 41 — Criando um dicionário
 # Crie um dicionário chamado aluno com as chaves "nome", "idade" e "curso".
 # Preencha com valores fictícios e mostre o dicionário completo.
+
 aluno = {
     "nome" : "Luiza",
     "idade" : 18,
     "curso" : "economia"
 }
+
+print(aluno)
 
 # _________________________________________________________
 
@@ -496,13 +600,20 @@ aluno = {
 
 produto = {"nome":"Teclado", "preco": 150.0, "estoque": 8}
 
+print(f"Nome: {produto['nome']}")
+print(f"Preço: R$ {produto ['preco']}")
+
 # _________________________________________________________
 
 # Exercício 43 — Adicionando uma chave
 # Adicione a chave "marca" ao dicionário abaixo e mostre o resultado.
 # produto = {"nome": "Mouse", "preco": 80.0}
 
+produto = {"nome": "Mouse", "preco": 80.0}
 
+produto["marca"] = "Dell"
+
+print(produto)
 
 # _________________________________________________________
 
@@ -510,7 +621,11 @@ produto = {"nome":"Teclado", "preco": 150.0, "estoque": 8}
 # Altere o estoque do produto abaixo para 15 unidades e mostre o dicionário.
 # produto = {"nome": "Monitor", "preco": 900.0, "estoque": 5}
 
+produto = {"nome": "Monitor", "preco": 900.0, "estoque": 5}
 
+produto["estoque"] = 15
+
+print(produto)
 
 # _________________________________________________________
 
@@ -518,7 +633,11 @@ produto = {"nome":"Teclado", "preco": 150.0, "estoque": 8}
 # Remova a chave "cor" do dicionário abaixo usando pop() e mostre o resultado.
 # carro = {"marca": "Ford", "modelo": "Ka", "ano": 2020, "cor": "prata"}
 
+carro = {"marca": "Ford", "modelo": "Ka", "ano": 2020, "cor": "prata"}
 
+carro.pop("cor")
+
+print(carro)
 
 # _________________________________________________________
 
@@ -527,7 +646,12 @@ produto = {"nome":"Teclado", "preco": 150.0, "estoque": 8}
 # mensagem informando o resultado.
 # contato = {"nome": "Marina", "email": "marina@email.com"}
 
+contato = {"nome": "Marina", "email": "marina@email.com"}
 
+if "telefone" in contato:
+    print("A chave 'telefone' existe no dicionário.")
+else:
+    print("A chave 'telefone' não existe no dicionário.")
 
 # _________________________________________________________
 
@@ -536,7 +660,10 @@ produto = {"nome":"Teclado", "preco": 150.0, "estoque": 8}
 # valores do dicionário abaixo.
 # capitais = {"Brasil": "Brasília", "Argentina": "Buenos Aires", "Chile": "Santiago"}
 
+capitais = {"Brasil": "Brasília", "Argentina": "Buenos Aires", "Chile": "Santiago"}
 
+capitais.keys()
+capitais.values()
 
 # _________________________________________________________
 
@@ -544,7 +671,10 @@ produto = {"nome":"Teclado", "preco": 150.0, "estoque": 8}
 # Use um laço for e items() para mostrar o nome de cada produto e seu preço.
 # produtos = {"caderno": 25.0, "caneta": 4.5, "mochila": 120.0}
 
+produtos = {"caderno": 25.0, "caneta": 4.5, "mochila": 120.0}
 
+for nome, preco in produtos.items():    # items: keys e values juntos
+    print(f"{nome}: R${preco}")
 
 # _________________________________________________________
 
@@ -552,7 +682,9 @@ produto = {"nome":"Teclado", "preco": 150.0, "estoque": 8}
 # Calcule a soma de todas as quantidades do dicionário abaixo e mostre o total.
 # estoque = {"notebook": 5, "mouse": 20, "teclado": 12, "monitor": 4}
 
+estoque = {"notebook": 5, "mouse": 20, "teclado": 12, "monitor": 4}
 
+print(sum(estoque.values()))
 
 # _________________________________________________________
 
@@ -560,3 +692,15 @@ produto = {"nome":"Teclado", "preco": 150.0, "estoque": 8}
 # Percorra a lista abaixo e crie um dicionário que conte quantas vezes cada
 # palavra aparece. Ao final, mostre o dicionário de frequências.
 # palavras = ["python", "dados", "python", "lista", "dados", "python"]
+
+palavras = ["python", "dados", "python", "lista", "dados", "python"]
+
+frequencia = {}
+
+for palavra in palavras:
+    if palavra in frequencia:
+        frequencia[palavra] = frequencia[palavra] + 1
+    else:
+        frequencia[palavra] = 1
+
+print(frequencia)
