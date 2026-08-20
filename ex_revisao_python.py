@@ -704,4 +704,3 @@ for palavra in palavras:
         frequencia[palavra] = 1
 
 print(frequencia)
-#a 
