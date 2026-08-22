@@ -77,7 +77,7 @@ mult_num = (num1 * num2)
 div_num = num1 / num2
 
 print(f"A soma dos 2 números é: {soma_num:.2f}")
-print(f"A subtração dos 1° número pelo 2° é: {sub_num:2f}")
+print(f"A subtração dos 1° número pelo 2° é: {sub_num:.2f}")
 print(f"A multiplicação dos 2 números é: {mult_num:.2f}")
 print(f"A divisão dos 2 números é: {div_num:.2f}")
 
@@ -139,7 +139,11 @@ print (f"A área desse retângulo é de: {area} {unidade}²")
 
 frase = str(input("Digite uma frase:"))
 
-!!!
+print(f"Em maiúsculas: {frase.upper()}")
+
+print(f"Em minúsculas: {frase.lower()}")
+
+print(f"A frase tem {len(frase)} caracteres.")
 
 # _________________________________________________________
 
@@ -176,7 +180,7 @@ else:
 # Leia um número inteiro e informe se ele é par ou ímpar.
 # Dica: use o operador de resto da divisão (%).
 
-numero_inteiro = float(input("Digite um número inteiro:"))
+numero_inteiro = int(input("Digite um número inteiro:"))
 
 if numero_inteiro % 2 == 0:
     print(f"O número é par.")
@@ -314,7 +318,10 @@ elif operacao == "-":
 elif operacao == "*":
     print(f"O resultado da multiplicação é: {(n1*n2):.2f}")
 elif operacao == "/":
-    print(f"O resultado da divisão é: {(n1/n2)}")
+    if n2 == 0:
+        print("Não é possível dividir por zero.")
+    else:
+        print(f"O resultado da divisão é: {(n1/n2):.2f}")
 
 
 # ============================================================================
@@ -335,8 +342,10 @@ print (frutas)
 # cores = ["azul", "verde", "amarelo", "vermelho"]
 
 cores = ["azul", "verde", "amarelo", "vermelho"]
-cores[0]
-cores[-1]
+
+print(f"O primeiro elemento é: {cores[0]}.")
+
+print(f"O último elemento é: {cores[-1]}.")
 
 # _________________________________________________________
 
@@ -384,7 +393,7 @@ print(frutas)
 
 numeros = [10, 20, 30, 40, 50]
 
-len(numeros)
+print(f"A quantidade de elementos da lista é: {len(numeros)}.")
 
 if 30 in numeros:
     print("O número 30 pertence à lista.")
@@ -441,11 +450,11 @@ print(lista_c)
 
 numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-print(f"Os 3 primeiros números são: {(numeros[0], numeros[1], numeros[2])}.")
+print(f"Os 3 primeiros números são: {(numeros[0:3])}.")
 
-print(f"Os 3 últimos números são: {(numeros[-3], numeros[-2], numeros[-1])}.")
+print(f"Os 3 últimos números são: {(numeros[-3:])}.")
 
-print(f"Os números do índice 2 ao 5 são: {(numeros[1], numeros[2], numeros[3], numeros[4])}.")
+print(f"Os números do índice 2 ao 5 são: {(numeros[1:5])}.")
 
 # ============================================================================
 # 4. ESTRUTURAS DE REPETIÇÃO — EXERCÍCIOS 31 A 40
@@ -662,8 +671,9 @@ else:
 
 capitais = {"Brasil": "Brasília", "Argentina": "Buenos Aires", "Chile": "Santiago"}
 
-capitais.keys()
-capitais.values()
+print(f"As chaves do dicionário são: {list(capitais.keys())}.")
+
+print(f"Os valores do dicionário são: {list(capitais.values())}.")
 
 # _________________________________________________________
 
